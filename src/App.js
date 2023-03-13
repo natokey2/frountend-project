@@ -2,6 +2,9 @@
 
 import './App.css';
 import Navbar from './Navbar';
+import Home from './Home';
+import About from './About';
+import Posts from './Posts';
 
 function App() {
 
@@ -11,12 +14,21 @@ function App() {
     const website="facebook.com";
   return (
     
+   
     <div className="App">
-      <Navbar />
-      <h1>{name}</h1>
+       
+       <Navbar />
+       <Posts />
+       
+       
+
+       {/* <Home /> */}
+      {/* <h1>{name}</h1>
       <p>{age}</p>
       <p>{salary}</p>
-      <a href={ website}>facebook</a>
+      <a href={ website}>facebook</a><br/> */}
+      {/* <About /> */}
+      
     </div>
   );
 }
