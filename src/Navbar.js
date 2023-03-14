@@ -1,5 +1,13 @@
+
+import {BrowserRouter,Link,Route,Routes} from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+import Posts from "./Posts";
+
 const Navbar =()=>{
     return(
+      <div>
+      <BrowserRouter>
 
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -9,22 +17,15 @@ const Navbar =()=>{
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Home</a>
+              <Link to ="/" className="nav-link active" >Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Link</a>
+              <Link to="/About" className="nav-link" >About</Link>
             </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" href="#">Action</a></li>
-                <li><a className="dropdown-item" href="#">Another action</a></li>
-                <li><hr className="dropdown-divider"/></li>
-                <li><a className="dropdown-item" href="#">Something else here</a></li>
-              </ul>
+            <li className="nav-item">
+              <Link to="/Posts" className="nav-link" >Posts</Link>
             </li>
            
           </ul>
@@ -35,6 +36,15 @@ const Navbar =()=>{
         </div>
       </div>
     </nav>
+
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/About" element={<About />}></Route>
+      <Route path="/Posts" element={<Posts />}></Route>
+    </Routes>
+
+    </BrowserRouter>
+    </div>
     );
 }
 export default Navbar;

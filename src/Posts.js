@@ -1,7 +1,8 @@
 import{useState} from "react";
+import PostsList from "./PostsList";
 
 const Posts=()=>{
-    const [Posts,setPost]=useState(
+    const [posts,setPost]=useState(
         [
             {
               userId: 1,
@@ -41,46 +42,7 @@ const Posts=()=>{
     
 
     return(
-       <div className="container">
-        {Posts.map((Post)=>(
-        <div key={Post.id}>
-            <h1>{Post.title}</h1>
-            <p>{Post.body}</p>
-            
-        </div>
-        ))}
-
-        <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">title</th>
-            <th scope="col">body</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-          
-          {Posts.map((Post)=>(
-            <tr  key={Post.id}>
-        
-             <th scope="row">{Post.id}</th>
-             <td>{Post.title}</td>
-             <td>{Post.body}</td>
-            
-            
-            
-       
-        </tr>
-
-        ))}
-           
-          
-
-          
-        </tbody>
-      </table>
-       </div>
+        <PostsList Posts={posts} />
     );
 }
 export default Posts;
